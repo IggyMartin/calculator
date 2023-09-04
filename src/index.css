@@ -8,3 +8,7 @@ body {
   background-color: rgb(193, 187, 204);
   color: #ffffff;
 }
+
+p, button {
+  font-family: "Calculator";
+}

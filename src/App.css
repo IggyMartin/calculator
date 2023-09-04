@@ -1,11 +1,16 @@
 .container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.calculator {
   height: 400px;
   width: 350px;
   background-color: #000000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 5px;
   display: grid;
   grid-template-rows: repeat(6, 1fr);
@@ -21,11 +26,11 @@
 .firstRow p:first-child {
   color: rgb(240, 134, 29);
   height: 35%;
-  font-size: 19px;
+  font-size: 22px;
 }
 
 .firstRow p:nth-child(2) {
-  font-size: 26px;
+  font-size: 28px;
   height: 65%;
   display: flex;
   justify-content: flex-end;
@@ -65,7 +70,7 @@
 }
 
 button {
-  font-size: 18px;
+  font-size: 24px;
   color: #ffffff;
   border: 1px solid #000000;
 }
@@ -81,4 +86,16 @@ button:active {
 
 .mathSymbols button, .mathSymbols2 button {
   background-color: rgb(127, 123, 123);
+}
+
+.container > p {
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+.container a {
+  text-decoration: none;
+  display: block;
+  color: #000000;
 }
