@@ -8,7 +8,7 @@
 }
 
 .calculator {
-  height: 400px;
+  min-height: 400px;
   width: 350px;
   background-color: #000000;
   border-radius: 5px;
@@ -20,13 +20,14 @@
 .firstRow {
   grid-column: 1 / span 4;
   text-align: right;
-  padding-right: 5px;
+  padding: 0 5px;
 }
 
 .firstRow p:first-child {
   color: rgb(240, 134, 29);
   height: 35%;
   font-size: 22px;
+  word-wrap: break-word;
 }
 
 .firstRow p:nth-child(2) {
@@ -35,6 +36,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 5px;
 }
 
 .mathSymbols {
