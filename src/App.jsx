@@ -157,16 +157,18 @@ function App() {
   }
 
   const handleMathOperation = () => {
+    // if user clicked '=' and the operation is empty or a math operator, we set it to NaN
     if(!math || math === "+" || math === "-" || math === "*" || math === "/") {
-      // if user clicked '=' and the operation is empty or a math operator, we set it to NaN
       setMath("NaN")
       setMathOperation("= NaN")
       setDisplay("NaN") 
       setLastKey("=")
       return
     }
-    // won't evaluate if user clicked '=' after previously clicking it, the operation ends with a math operator, or the user tries to evaluate a number with a previous '*' or '/', 
-    if(lastKey === "=" || operators.includes(math.charAt(math.length - 1)) || math.length === 2 && math.charAt(math.length - 2) === "*" || math.charAt(math.length - 2) === "/") return
+    // if user tries to make a math operation which is starting with a multiplication or division operator, we alert them 
+    if(math.length > 1 && math[0] === "*" || math[0] === "/") return alert("Do not start your operation with a multiplication or division operator")
+    // won't evaluate if user clicked '=' after previously clicking it, or the operation ends with a math operator 
+    if(lastKey === "=" || operators.includes(math.charAt(math.length - 1))) return
     setMathOperation(`${math} = ${evaluate(math)}`) // we use the evaluate imported function to make the math operation and show it together with it's result
     setDisplay(String(evaluate(math))) // we 'stringify' the math operation result in case it ends in NaN, and display the result
     setMath(evaluate(math)) // we set the math operation to be the result of the previuos
@@ -176,7 +178,7 @@ function App() {
   return (
     <main className='container'>
       <div className='calculator'>
-        <div className='firstRow'>
+        <div className='screen'>
           <p className='showMath'>{mathOperation}</p>
           {lengthLimit ? (
             <p>Digit Limit Met</p>

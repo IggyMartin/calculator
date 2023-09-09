@@ -8,7 +8,7 @@
 }
 
 .calculator {
-  min-height: 400px;
+  height: 400px;
   width: 350px;
   background-color: #000000;
   border-radius: 5px;
@@ -17,26 +17,24 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-.firstRow {
+.screen {
   grid-column: 1 / span 4;
   text-align: right;
-  padding: 0 5px;
+  position: relative;
+  margin: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.firstRow p:first-child {
+.screen p:first-child {
   color: rgb(240, 134, 29);
-  height: 35%;
   font-size: 22px;
   word-wrap: break-word;
 }
 
-.firstRow p:nth-child(2) {
+.screen p:nth-child(2) {
   font-size: 28px;
-  height: 65%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 5px;
 }
 
 .mathSymbols {
