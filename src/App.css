@@ -4,16 +4,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
 .calculator {
-  height: 400px;
+  min-height: 400px;
   width: 350px;
   background-color: #000000;
   border-radius: 5px;
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -25,6 +23,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  min-height: 67px;
 }
 
 .screen p:first-child {
@@ -41,6 +40,7 @@
   grid-column: 1 / span 4;
   display: grid;
   grid-template: 1fr / repeat(4, 1fr);
+  height: 67px;
 }
 
 #clear {
@@ -53,6 +53,7 @@
   grid-row: 3 / span 4;
   display: grid;
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+  height: 267px;
 }
 
 .numbers button {
@@ -63,6 +64,7 @@
   grid-row: 3 / span 4;
   display: grid;
   grid-template: repeat(4, 1fr) / 1fr;
+  height: 267px;
 }
 
 #equals {
@@ -89,6 +91,7 @@ button:active {
 }
 
 .container > p {
+  margin-top: 10px;
   font-size: 20px;
   color: #000000;
   text-align: center;
